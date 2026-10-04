@@ -436,7 +436,8 @@
     "quota_refresh_single": "Обновить квоту",
     "quota_refresh_hint": "Обновить квоту только для этих учётных данных",
     "quota_refresh_success": "Квота для \"{{name}}\" обновлена",
-    "quota_refresh_failed": "Не удалось обновить квоту для \"{{name}}\": {{message}}"
+    "quota_refresh_failed": "Не удалось обновить квоту для \"{{name}}\": {{message}}",
+    "filter_cursor-local": "Cursor"
   },
   "antigravity_subscription": {
     "plan_unknown": "Неизвестно",
@@ -2219,5 +2220,41 @@
     "unavailable": "Сбросы временно недоступны.",
     "rate_limited": "Слишком много запросов.",
     "auth_error": "Авторизация отклонена."
+  },
+  "cursor_quota": {
+    "timeline_note": "Cursor показывает только заявленный расчётный период; следующие появятся после их получения.",
+    "percent_remaining": "Осталось {{percent}}%",
+    "unavailable": "Не удалось получить использование подписки от Cursor.",
+    "scope": "Локальное использование после перезапуска прокси. Число токенов приблизительное; это не данные подписки или счета.",
+    "local_executions": "Локальные выполнения",
+    "local_success": "Завершённые запросы",
+    "local_failed": "Неудачные запросы",
+    "estimated_input_tokens": "Оценка входных токенов",
+    "estimated_output_tokens": "Оценка выходных токенов",
+    "missing_auth_index": "Отсутствует индекс учётных данных",
+    "empty_title": "Нет аккаунтов Cursor",
+    "empty_desc": "Войдите в Cursor через локальный плагин.",
+    "idle": "Загрузить квоту Cursor",
+    "loading": "Загрузка квоты Cursor",
+    "load_failed": "Не удалось загрузить квоту",
+    "plan": "Текущий план",
+    "unknown": "Недоступно",
+    "per_month": "{{price}}/мес.",
+    "usage_resets": "Сброс использования: {{date}}",
+    "cursor_models": "Модели Cursor",
+    "other_models": "Другие модели",
+    "grok_bot": "Grok Bot · за неделю",
+    "percent_used": "Использовано {{percent}}%",
+    "cursor_models_description": "Включает Cursor Grok и Composer. При превышении расходуется квота других моделей или оплата по использованию.",
+    "other_models_description": "При превышении лимита применяется оплата по использованию.",
+    "grok_bot_description": "Сброс еженедельно. При достижении лимита бот приостанавливается, если оплата по использованию выключена.",
+    "included_used": "Использовано из включённой квоты: {{amount}}",
+    "included_remaining": "Остаток включённой квоты: {{amount}}",
+    "included_limit": "Включённая квота: {{amount}}",
+    "on_demand": "Оплата по использованию",
+    "enabled": "Включена",
+    "disabled": "Выключена",
+    "monthly_limit": "Месячный лимит: {{amount}}",
+    "local_usage": "Локальное использование прокси (оценки)"
   }
 }
