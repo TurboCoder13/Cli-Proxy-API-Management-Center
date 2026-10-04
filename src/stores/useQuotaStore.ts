@@ -1,3 +1,4 @@
+import type { CursorQuotaState } from '@/features/quota/providers/cursor/types';
 /**
  * Quota cache that survives route switches.
  */
@@ -26,6 +27,7 @@ interface QuotaStoreState {
   kimiQuota: Record<string, KimiQuotaState>;
   metaQuota: Record<string, MetaQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
+  cursorQuota: Record<string, CursorQuotaState>;
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
   setCodexQuota: (updater: QuotaUpdater<Record<string, CodexQuotaState>>) => void;
@@ -33,6 +35,7 @@ interface QuotaStoreState {
   setKimiQuota: (updater: QuotaUpdater<Record<string, KimiQuotaState>>) => void;
   setMetaQuota: (updater: QuotaUpdater<Record<string, MetaQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
+  setCursorQuota: (updater: QuotaUpdater<Record<string, CursorQuotaState>>) => void;
   clearQuotaCache: (names?: string[]) => void;
 }
 
@@ -53,6 +56,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   kimiQuota: {},
   metaQuota: {},
   xaiQuota: {},
+  cursorQuota: {},
   setAntigravityQuota: (updater) =>
     set((state) => ({
       antigravityQuota: resolveUpdater(updater, state.antigravityQuota),
@@ -75,6 +79,8 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
     })),
   setMetaQuota: (updater) =>
     set((state) => ({ metaQuota: resolveUpdater(updater, state.metaQuota) })),
+  setCursorQuota: (updater) =>
+    set((state) => ({ cursorQuota: resolveUpdater(updater, state.cursorQuota) })),
   setXaiQuota: (updater) =>
     set((state) => ({
       xaiQuota: resolveUpdater(updater, state.xaiQuota),
@@ -106,6 +112,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
           kimiQuota: omitNames(state.kimiQuota),
           metaQuota: omitNames(state.metaQuota),
           xaiQuota: omitNames(state.xaiQuota),
+          cursorQuota: omitNames(state.cursorQuota),
         };
       }
       return {
@@ -118,6 +125,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
         kimiQuota: {},
         metaQuota: {},
         xaiQuota: {},
+        cursorQuota: {},
       };
     }),
 }));

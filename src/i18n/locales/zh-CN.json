@@ -431,7 +431,8 @@
     "quota_refresh_single": "刷新额度",
     "quota_refresh_hint": "仅刷新该认证文件的额度",
     "quota_refresh_success": "已刷新 \"{{name}}\" 的额度",
-    "quota_refresh_failed": "刷新 \"{{name}}\" 的额度失败：{{message}}"
+    "quota_refresh_failed": "刷新 \"{{name}}\" 的额度失败：{{message}}",
+    "filter_cursor-local": "Cursor"
   },
   "antigravity_subscription": {
     "plan_unknown": "未知",
@@ -2223,5 +2224,41 @@
     "unavailable": "重置暂不可用。",
     "rate_limited": "请求过于频繁。",
     "auth_error": "授权被拒绝。"
+  },
+  "cursor_quota": {
+    "timeline_note": "Cursor 仅显示已报告的计费周期；后续周期将在报告后显示。",
+    "percent_remaining": "剩余 {{percent}}%",
+    "unavailable": "无法从 Cursor 获取订阅用量。",
+    "scope": "仅显示代理重启后的本地用量。令牌数为估算值，不代表订阅或账单总额。",
+    "local_executions": "本地执行",
+    "local_success": "已完成请求",
+    "local_failed": "失败请求",
+    "estimated_input_tokens": "估算输入令牌",
+    "estimated_output_tokens": "估算输出令牌",
+    "missing_auth_index": "缺少凭证索引",
+    "empty_title": "没有 Cursor 账户",
+    "empty_desc": "请通过本地插件登录 Cursor。",
+    "idle": "点击加载 Cursor 额度",
+    "loading": "正在加载 Cursor 额度",
+    "load_failed": "无法加载配额",
+    "plan": "当前套餐",
+    "unknown": "不可用",
+    "per_month": "{{price}}/月",
+    "usage_resets": "用量重置：{{date}}",
+    "cursor_models": "Cursor 模型",
+    "other_models": "其他模型",
+    "grok_bot": "Grok Bot · 每周",
+    "percent_used": "已使用 {{percent}}%",
+    "cursor_models_description": "包含 Cursor Grok 和 Composer。超出限额的用量将消耗其他模型额度或按需支出。",
+    "other_models_description": "超出限额的用量将消耗按需支出。",
+    "grok_bot_description": "每周重置。达到限额后暂停，除非启用按需支出。",
+    "included_used": "已消耗包含用量：{{amount}}",
+    "included_remaining": "剩余包含用量：{{amount}}",
+    "included_limit": "包含用量额度：{{amount}}",
+    "on_demand": "按需支出",
+    "enabled": "已启用",
+    "disabled": "已禁用",
+    "monthly_limit": "每月限额：{{amount}}",
+    "local_usage": "本地代理用量（估算）"
   }
 }

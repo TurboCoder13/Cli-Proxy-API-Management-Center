@@ -58,6 +58,10 @@ export interface TimelineLane {
   remaining: number | null;
   limits: TimelineLimit[];
   resetCredits: TimelineResetCredit[];
+  /** Exact provider-reported bounds; these windows must never be extrapolated. */
+  reportedWindow?: { startMs: number; endMs: number };
+  /** Translation key identifying the quota whose remaining value fills the bar. */
+  windowLabelKey?: string;
 }
 
 /** One drawn bar: a single window occurrence within the visible span. */
@@ -164,7 +168,13 @@ export function projectLane(
 
   const toPercent = (ms: number) => ((ms - spanStartMs) / span) * 100;
 
-  return windowsIn(lane.anchorMs, periodHours * HOUR_MS, spanStartMs, spanEndMs)
+  // Calendar billing periods vary in length. A reported period is one window,
+  // not evidence that preceding/following months have the same duration.
+  const windows = lane.reportedWindow
+    ? [lane.reportedWindow]
+    : windowsIn(lane.anchorMs, periodHours * HOUR_MS, spanStartMs, spanEndMs);
+
+  return windows
     .map((window): TimelineWindow | null => {
       const left = Math.max(0, toPercent(window.startMs));
       const right = Math.min(100, toPercent(window.endMs));
@@ -414,6 +424,52 @@ export function buildTimelineLane(input: TimelineLaneInput): TimelineLane {
           remaining: clampPercent(100 - (window.usedPercent as number)),
         })),
       resetCredits,
+    };
+  }
+
+  if (provider === 'cursor-local') {
+    const windows = (quota as { windows?: WindowLike[] }).windows ?? [];
+    const billingWindows = windows.filter(
+      (window) =>
+        (window.id === 'cursor_models' || window.id === 'other_models') &&
+        typeof window.resetAtMs === 'number' &&
+        Number.isFinite(window.resetAtMs) &&
+        typeof window.periodHours === 'number' &&
+        Number.isFinite(window.periodHours) &&
+        window.periodHours > 0
+    );
+    // Both model buckets share a billing cycle, but have distinct allowances.
+    // Prefer Other Models and identify the bar rather than combining usage.
+    const chosen =
+      billingWindows.find((window) => window.id === 'other_models') ?? billingWindows[0];
+    if (!chosen) return empty;
+    const endMs = chosen.resetAtMs as number;
+    const periodHours = chosen.periodHours as number;
+    const startMs = endMs - periodHours * HOUR_MS;
+    const remainingOf = (window: WindowLike) =>
+      typeof window.usedPercent === 'number' && Number.isFinite(window.usedPercent)
+        ? Math.floor(clampPercent(100 - window.usedPercent) + 1e-9)
+        : null;
+
+    return {
+      ...empty,
+      anchorMs: endMs,
+      periodHours,
+      remaining: remainingOf(chosen),
+      reportedWindow: { startMs, endMs },
+      windowLabelKey: `cursor_quota.${chosen.id}`,
+      limits: windows
+        .filter(
+          (window) =>
+            window.id === 'cursor_models' ||
+            window.id === 'other_models' ||
+            window.id === 'grok_bot'
+        )
+        .map((window) => ({
+          label: `cursor_quota.${window.id}`,
+          remaining: remainingOf(window),
+        }))
+        .filter((limit): limit is TimelineLimit => limit.remaining !== null),
     };
   }
 

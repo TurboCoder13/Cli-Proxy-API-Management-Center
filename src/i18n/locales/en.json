@@ -433,7 +433,8 @@
     "quota_refresh_single": "Refresh quota",
     "quota_refresh_hint": "Refresh quota only for this credential",
     "quota_refresh_success": "Quota refreshed for \"{{name}}\"",
-    "quota_refresh_failed": "Failed to refresh quota for \"{{name}}\": {{message}}"
+    "quota_refresh_failed": "Failed to refresh quota for \"{{name}}\": {{message}}",
+    "filter_cursor-local": "Cursor"
   },
   "antigravity_subscription": {
     "plan_unknown": "Unknown",
@@ -2225,5 +2226,41 @@
     "unavailable": "Resets are currently unavailable.",
     "rate_limited": "Request rate limited.",
     "auth_error": "Authorization was refused."
+  },
+  "cursor_quota": {
+    "timeline_note": "Cursor shows its reported billing window only; later cycles appear once reported.",
+    "percent_remaining": "{{percent}}% remaining",
+    "unavailable": "Subscription usage could not be retrieved from Cursor.",
+    "scope": "Local usage since proxy restart. Token counts are estimates; these are not subscription or billing totals.",
+    "local_executions": "Local executions",
+    "local_success": "Completed requests",
+    "local_failed": "Failed requests",
+    "estimated_input_tokens": "Estimated input tokens",
+    "estimated_output_tokens": "Estimated output tokens",
+    "missing_auth_index": "Missing credential index",
+    "empty_title": "No Cursor accounts",
+    "empty_desc": "Sign in to Cursor through the local plugin.",
+    "idle": "Click to load Cursor quota",
+    "loading": "Loading Cursor quota",
+    "load_failed": "Quota could not be loaded",
+    "plan": "Current plan",
+    "unknown": "Unavailable",
+    "per_month": "{{price}}/mo",
+    "usage_resets": "Usage resets: {{date}}",
+    "cursor_models": "Cursor Models",
+    "other_models": "Other Models",
+    "grok_bot": "Grok Bot · weekly",
+    "percent_used": "{{percent}}% used",
+    "cursor_models_description": "Includes Cursor Grok and Composer. Additional usage consumes Other Models quota or on-demand spend.",
+    "other_models_description": "Additional usage beyond limits consumes on-demand spend.",
+    "grok_bot_description": "Resets weekly. Grok Bot pauses at the limit unless on-demand spending is enabled.",
+    "included_used": "Included usage spent: {{amount}}",
+    "included_remaining": "Included usage remaining: {{amount}}",
+    "included_limit": "Included usage allowance: {{amount}}",
+    "on_demand": "On-demand spending",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "monthly_limit": "Monthly limit: {{amount}}",
+    "local_usage": "Local proxy usage (estimates)"
   }
 }
