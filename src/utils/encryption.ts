@@ -23,6 +23,12 @@ function decodeText(bytes: Uint8Array): string {
 function getKeyBytes(): Uint8Array {
   if (cachedKeyBytes) return cachedKeyBytes;
 
+  // Static rendering and Bun tests have no browser context to bind the key to.
+  // Do not cache this fallback: a later browser context must use its own key.
+  if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+    return encodeText(SECRET_SALT);
+  }
+
   try {
     const host = window.location.host;
     const ua = navigator.userAgent;
