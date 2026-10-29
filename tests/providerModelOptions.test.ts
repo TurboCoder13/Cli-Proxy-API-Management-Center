@@ -1,6 +1,9 @@
 import { describe, expect, test } from 'bun:test';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { createInstance } from 'i18next';
+import { I18nextProvider } from 'react-i18next';
+import en from '@/i18n/locales/en.json';
 import {
   readModelOptions,
   buildModelOptions,
@@ -9,6 +12,10 @@ import {
 import { ModelAdvancedFields } from '@/features/providers/sheets/forms/ModelAdvancedFields';
 import type { ModelEntryInput, ProviderBrand } from '@/features/providers/types';
 import type { ModelAlias } from '@/types';
+
+const i18n = createInstance();
+await i18n.init({ lng: 'en', resources: { en: { translation: en } } });
+const labels = en.providersPage.modelOptions;
 
 const draft = (model: ModelAlias): ModelEntryInput => ({
   name: model.name,
@@ -174,34 +181,32 @@ describe('provider model options', () => {
 
   const render = (brand: ProviderBrand, disabled = false, enabled = true) =>
     renderToStaticMarkup(
-      createElement(ModelAdvancedFields, {
-        entry: { name: 'model', thinkingEnabled: enabled },
-        providerBrand: brand,
-        disabled,
-        supportsThinking: true,
-        onUpdate: () => {},
-      })
+      createElement(
+        I18nextProvider,
+        { i18n },
+        createElement(ModelAdvancedFields, {
+          entry: { name: 'model', thinkingEnabled: enabled },
+          providerBrand: brand,
+          disabled,
+          supportsThinking: true,
+          onUpdate: () => {},
+        })
+      )
     );
 
   test('gates fields by provider capability', () => {
     const vertex = render('vertex');
-    expect(vertex).toContain('providersPage.modelOptions.displayName');
-    expect(vertex).toContain('providersPage.modelOptions.forceMapping');
-    expect(vertex).not.toContain('providersPage.modelOptions.maxContextLength');
-    expect(vertex).not.toContain('providersPage.modelOptions.isCompat');
+    expect(vertex).toContain(labels.displayName);
+    expect(vertex).toContain(labels.forceMapping);
+    expect(vertex).not.toContain(labels.maxContextLength);
+    expect(vertex).not.toContain(labels.isCompat);
     for (const brand of ['gemini', 'codex', 'openaiCompatibility'] as const) {
       const html = render(brand);
-      expect(html).toContain('providersPage.modelOptions.maxContextLength');
-      expect(html).toContain('providersPage.modelOptions.isCompat');
-      expect(html.includes('providersPage.modelOptions.supportConfigurationUpdate')).toBe(
-        brand === 'codex'
-      );
-      expect(html.includes('providersPage.modelOptions.inputModalitiesText')).toBe(
-        brand === 'openaiCompatibility'
-      );
-      expect(html.includes('providersPage.modelOptions.useMaxCompletionTokens')).toBe(
-        brand === 'openaiCompatibility'
-      );
+      expect(html).toContain(labels.maxContextLength);
+      expect(html).toContain(labels.isCompat);
+      expect(html.includes(labels.supportConfigurationUpdate)).toBe(brand === 'codex');
+      expect(html.includes(labels.inputModalitiesText)).toBe(brand === 'openaiCompatibility');
+      expect(html.includes(labels.useMaxCompletionTokens)).toBe(brand === 'openaiCompatibility');
     }
   });
 
