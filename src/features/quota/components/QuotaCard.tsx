@@ -10,6 +10,7 @@
 import { useState, type CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconRefreshCw } from '@/components/ui/icons';
+import { AuthFileCooldownSection } from '@/features/authFiles/components/AuthFileCooldownSection';
 import type { ResolvedTheme } from '@/types';
 import { resolveQuotaErrorMessage } from '@/utils/quota';
 import { getQuotaDisplayName } from '@/utils/quota/identity';
@@ -113,6 +114,7 @@ export function QuotaCard(props: QuotaCardProps) {
       </header>
 
       <div className={styles.body}>
+        {entry.type === 'claude' && <AuthFileCooldownSection snapshot={file.cooldownSnapshot} />}
         {entry.type === 'claude' && status === 'success' && (
           <>
             <div className={quotaClasses.codexPlan}>

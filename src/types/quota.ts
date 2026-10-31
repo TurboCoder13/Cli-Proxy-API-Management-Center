@@ -132,6 +132,13 @@ export interface ClaudeUsagePayload {
   seven_day_cowork?: ClaudeUsageWindow | null;
   iguana_necktie?: ClaudeUsageWindow | null;
   limits?: ClaudeUsageLimit[] | null;
+  weekly_scoped_shares?:
+    | {
+        limit_index?: number | null;
+        used_percent_of_weekly?: number | null;
+        allowance_percent_of_weekly?: number | null;
+      }[]
+    | null;
   extra_usage?: ClaudeExtraUsage | null;
 }
 
@@ -151,6 +158,7 @@ export interface ClaudeProfileResponse {
     organization_type?: string;
     billing_type?: string;
     rate_limit_tier?: string;
+    plan_display_name?: string;
     has_extra_usage_enabled?: boolean;
     subscription_status?: string;
     subscription_created_at?: string;
@@ -162,6 +170,8 @@ export interface ClaudeQuotaWindow {
   label: string;
   labelKey?: string;
   usedPercent: number | null;
+  /** Scoped usage as a share of the overall weekly allowance, not this meter. */
+  weeklyShare?: { usedPercent: number; allowancePercent: number };
   resetLabel: string;
   /**
    * Reset instant in epoch ms, kept alongside the display label so callers that
@@ -178,6 +188,8 @@ export interface ClaudeQuotaState {
   windows: ClaudeQuotaWindow[];
   extraUsage?: ClaudeExtraUsage | null;
   planType?: string | null;
+  planDisplayName?: string | null;
+  fiveHourLimitAbsent?: boolean;
   error?: string;
   errorStatus?: number;
 }
