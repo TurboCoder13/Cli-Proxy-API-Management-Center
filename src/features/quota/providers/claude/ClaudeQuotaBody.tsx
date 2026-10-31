@@ -22,13 +22,33 @@ export function ClaudeQuotaBody({ quota, classes }: QuotaBodyProps<ClaudeQuotaSt
   const windows = quota.windows ?? [];
   const extraUsage = quota.extraUsage ?? null;
   const planType = quota.planType ?? null;
+  const planName = quota.planDisplayName || (planType ? t(`claude_quota.${planType}`) : null);
+  const exhausted = windows.filter(
+    (window) => window.usedPercent !== null && window.usedPercent >= 100
+  );
 
   return (
     <>
-      {planType && (
+      {planName && (
         <div className={classes.codexPlan}>
           <span className={classes.codexPlanLabel}>{t('claude_quota.plan_label')}</span>
-          <span className={classes.codexPlanValue}>{t(`claude_quota.${planType}`)}</span>
+          <span className={classes.codexPlanValue}>{planName}</span>
+        </div>
+      )}
+      {quota.fiveHourLimitAbsent && (
+        <div className={classes.quotaMessage}>{t('claude_quota.no_five_hour_limit')}</div>
+      )}
+      {exhausted.length > 0 && (
+        <div role="status" className={classes.codexResetCreditsError}>
+          {t('claude_quota.exhausted', {
+            limits: exhausted
+              .map((window) => (window.labelKey ? t(window.labelKey) : window.label))
+              .join(', '),
+          })}
+          {exhausted.some((window) => window.id === 'seven-day-fable') && (
+            <> {t('claude_quota.fable_exhausted_hint')}</>
+          )}
+          {extraUsage?.is_enabled === false && <> {t('claude_quota.usage_credits_disabled')}</>}
         </div>
       )}
       {extraUsage && extraUsage.is_enabled && (
@@ -47,7 +67,14 @@ export function ClaudeQuotaBody({ quota, classes }: QuotaBodyProps<ClaudeQuotaSt
           const clampedUsed = used === null ? null : Math.max(0, Math.min(100, used));
           const remaining =
             clampedUsed === null ? null : Math.max(0, Math.min(100, 100 - clampedUsed));
-          const percentLabel = remaining === null ? '--' : `${Math.round(remaining)}%`;
+          const percentLabel =
+            remaining === null
+              ? '--'
+              : t('claude_quota.remaining_percent', {
+                  percent: new Intl.NumberFormat(i18n.resolvedLanguage, {
+                    maximumFractionDigits: 1,
+                  }).format(remaining),
+                });
           const windowLabel = window.labelKey ? t(window.labelKey) : window.label;
           const resetDisplay = buildResetDisplay(
             window.resetLabel,
@@ -74,10 +101,19 @@ export function ClaudeQuotaBody({ quota, classes }: QuotaBodyProps<ClaudeQuotaSt
                 </div>
               </div>
               <QuotaMeter percent={remaining} classes={classes} index={index} />
+              {window.weeklyShare && (
+                <div className={classes.quotaAmount}>
+                  {t('claude_quota.weekly_share', {
+                    used: window.weeklyShare.usedPercent,
+                    allowance: window.weeklyShare.allowancePercent,
+                  })}
+                </div>
+              )}
             </div>
           );
         })
       )}
+      <div className={classes.quotaMessage}>{t('claude_quota.api_credits_separate')}</div>
     </>
   );
 }

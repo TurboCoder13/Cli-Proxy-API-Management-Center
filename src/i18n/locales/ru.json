@@ -493,7 +493,7 @@
     "seven_day_sonnet": "7 дней Sonnet",
     "seven_day_cowork": "7 дней Cowork",
     "iguana_necktie": "Iguana Necktie",
-    "seven_day_fable": "7 дней Fable 5",
+    "seven_day_fable": "Fable за 7 дней",
     "extra_usage_label": "Дополнительное использование",
     "plan_label": "План",
     "plan_unknown": "Неизвестно",
@@ -502,7 +502,15 @@
     "plan_max": "Max",
     "plan_max5": "Max 5x",
     "plan_max20": "Max 20x",
-    "plan_team": "Team"
+    "plan_team": "Team",
+    "plan_ultra": "Ultra",
+    "no_five_hour_limit": "Для этого аккаунта Ultra пятичасовой лимит не указан.",
+    "remaining_percent": "Осталось {{percent}}%",
+    "exhausted": "Лимит исчерпан: {{limits}}.",
+    "fable_exhausted_hint": "У Fable есть отдельный недельный лимит в пределах общей квоты.",
+    "weekly_share": "Использовано {{used}}% общей недельной квоты · предел {{allowance}}%.",
+    "usage_credits_disabled": "Оплата дополнительного использования отключена.",
+    "api_credits_separate": "Лимиты подписки и API-кредиты Claude Platform учитываются отдельно. API-кредиты не увеличивают эти лимиты."
   },
   "codex_quota": {
     "title": "Квота Codex",
