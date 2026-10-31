@@ -488,7 +488,7 @@
     "seven_day_sonnet": "7 天 Sonnet",
     "seven_day_cowork": "7 天 Cowork",
     "iguana_necktie": "Iguana Necktie",
-    "seven_day_fable": "7 天 Fable 5",
+    "seven_day_fable": "7 天 Fable",
     "extra_usage_label": "額外用量",
     "plan_label": "方案",
     "plan_unknown": "未知",
@@ -497,7 +497,15 @@
     "plan_max": "Max",
     "plan_max5": "Max 5x",
     "plan_max20": "Max 20x",
-    "plan_team": "團隊版"
+    "plan_team": "團隊版",
+    "plan_ultra": "Ultra",
+    "no_five_hour_limit": "此 Ultra 帳戶未回報五小時限額。",
+    "remaining_percent": "剩餘 {{percent}}%",
+    "exhausted": "已達限額：{{limits}}。",
+    "fable_exhausted_hint": "Fable 在每週總額度內另有獨立的每週上限。",
+    "weekly_share": "已使用每週總額度的 {{used}}% · 上限 {{allowance}}%。",
+    "usage_credits_disabled": "未啟用按量付費用量。",
+    "api_credits_separate": "訂閱限額與 Claude Platform API 額度相互獨立。API 額度不會增加這些限額。"
   },
   "codex_quota": {
     "title": "Codex 配額",

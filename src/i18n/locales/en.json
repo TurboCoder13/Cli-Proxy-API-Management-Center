@@ -490,7 +490,7 @@
     "seven_day_sonnet": "7-day Sonnet",
     "seven_day_cowork": "7-day Cowork",
     "iguana_necktie": "Iguana Necktie",
-    "seven_day_fable": "7-day Fable 5",
+    "seven_day_fable": "7-day Fable",
     "extra_usage_label": "Extra Usage",
     "plan_label": "Plan",
     "plan_unknown": "Unknown",
@@ -499,7 +499,15 @@
     "plan_max": "Max",
     "plan_max5": "Max 5x",
     "plan_max20": "Max 20x",
-    "plan_team": "Team"
+    "plan_team": "Team",
+    "plan_ultra": "Ultra",
+    "no_five_hour_limit": "No five-hour limit reported for this Ultra account.",
+    "remaining_percent": "{{percent}}% remaining",
+    "exhausted": "Limit reached: {{limits}}.",
+    "fable_exhausted_hint": "Fable has a separate weekly cap within your total allowance.",
+    "weekly_share": "Used {{used}}% of the total weekly allowance · cap {{allowance}}%.",
+    "usage_credits_disabled": "Usage credits are disabled.",
+    "api_credits_separate": "Subscription limits and Claude Platform API credits are separate. API credits do not extend these limits."
   },
   "codex_quota": {
     "title": "Codex Quota",
