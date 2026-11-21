@@ -1,3 +1,4 @@
+import { CURSOR_CONFIG } from './providers/cursor/data';
 /**
  * 额度页纯逻辑：文件归类、tab 过滤、计数、分页。
  * React-free —— 由 tests/quotaPageLogic.test.ts 直接消费。
@@ -24,6 +25,7 @@ const QUOTA_FILTER_MAP: Record<QuotaProviderType, (file: AuthFileItem) => boolea
   meta: META_CONFIG.filterFn,
   plugin: PLUGIN_CONFIG.filterFn,
   xai: XAI_CONFIG.filterFn,
+  'cursor-local': CURSOR_CONFIG.filterFn,
 };
 
 export interface QuotaFileEntry {

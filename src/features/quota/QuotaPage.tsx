@@ -146,6 +146,7 @@ export function QuotaPage() {
   const kimiQuota = useQuotaStore((state) => state.kimiQuota);
   const metaQuota = useQuotaStore((state) => state.metaQuota);
   const pluginQuota = useQuotaStore((state) => state.pluginQuota);
+  const cursorQuota = useQuotaStore((state) => state.cursorQuota);
   const xaiQuota = useQuotaStore((state) => state.xaiQuota);
 
   const quotaByType = useMemo<Record<QuotaProviderType, Record<string, QuotaCardState>>>(
@@ -159,6 +160,7 @@ export function QuotaPage() {
         meta: metaQuota,
         plugin: pluginQuota,
         xai: xaiQuota,
+        'cursor-local': cursorQuota,
       }) as unknown as Record<QuotaProviderType, Record<string, QuotaCardState>>,
     [
       antigravityQuota,
@@ -169,6 +171,7 @@ export function QuotaPage() {
       metaQuota,
       pluginQuota,
       xaiQuota,
+      cursorQuota,
     ]
   );
 

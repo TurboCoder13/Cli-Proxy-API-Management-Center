@@ -1,6 +1,6 @@
 import { describe, expect, spyOn, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
-import ts from 'typescript';
+import { transpileFunctionBody } from './helpers/transpile';
 import { modelsApi } from '../src/services/api/models';
 import { apiClient } from '../src/services/api/client';
 
@@ -41,9 +41,7 @@ function harness() {
     t: (key: string, params?: { providers: string }) => `${key}${params?.providers ?? ''}`,
   };
   const block = hook.slice(hook.indexOf('  const syncModelCatalog ='), hook.indexOf('  return {'));
-  const js = ts.transpileModule(`${block}\nreturn syncModelCatalog;`, {
-    compilerOptions: { target: ts.ScriptTarget.ES2022 },
-  }).outputText;
+  const js = transpileFunctionBody(`${block}\nreturn syncModelCatalog;`);
   return {
     sync: new Function(...Object.keys(env), js)(...Object.values(env)) as () => Promise<void>,
     resolve: (providers: string[]) => resolve({ changedProviders: providers }),

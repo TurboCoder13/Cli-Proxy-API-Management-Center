@@ -83,7 +83,7 @@ Supports **English, 简体中文, 繁體中文, and Русский**, with brows
 
 ## Deployment
 
-To build your own single-file UI, use **Bun 1.4.3**:
+To build your own single-file UI, use **Bun 1.4.4**:
 
 ```bash
 bun install --frozen-lockfile
@@ -112,7 +112,7 @@ bun run dev
 
 Open `http://localhost:5173` and connect to your backend instance.
 
-**Built with** React 19 · TypeScript 6 · Vite 8 · Zustand · Axios · React Router 7 · Motion · CodeMirror 6 · SCSS Modules · i18next.
+**Built with** React 19 · TypeScript 7 · Vite 8 · Zustand · Axios · React Router 7 · Motion · CodeMirror 6 · SCSS Modules · i18next.
 
 | Command | Purpose |
 | --- | --- |

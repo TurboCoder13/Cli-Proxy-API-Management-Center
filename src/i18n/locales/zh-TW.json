@@ -429,7 +429,8 @@
     "quota_refresh_single": "重新整理配額",
     "quota_refresh_hint": "僅重新整理該驗證檔案的配額",
     "quota_refresh_success": "已重新整理「{{name}}」的配額",
-    "quota_refresh_failed": "重新整理「{{name}}」的配額失敗：{{message}}"
+    "quota_refresh_failed": "重新整理「{{name}}」的配額失敗：{{message}}",
+    "filter_cursor-local": "Cursor"
   },
   "antigravity_subscription": {
     "plan_unknown": "未知",
@@ -505,7 +506,14 @@
     "plan_max": "Max",
     "plan_max5": "Max 5x",
     "plan_max20": "Max 20x",
-    "plan_team": "Team"
+    "plan_team": "Team",
+    "plan_ultra": "Ultra",
+    "no_five_hour_limit": "此 Ultra 帳戶未回報五小時限額。",
+    "remaining_percent": "剩餘 {{percent}}%",
+    "exhausted": "已達限額：{{limits}}。",
+    "fable_exhausted_hint": "Fable 在每週總額度內另有獨立的每週上限。",
+    "weekly_share": "已使用每週總額度的 {{used}}% · 上限 {{allowance}}%。",
+    "usage_credits_disabled": "未啟用按量付費用量。"
   },
   "codex_quota": {
     "title": "Codex 配額",
@@ -2117,7 +2125,7 @@
       "activeCount": "{{active}}/{{total}} 活躍"
     },
     "providerNames": {
-       "aiCodeMirror": "AIcodemirror",
+      "aiCodeMirror": "AIcodemirror",
       "meta": "Muse (Meta)",
       "gemini": "Gemini",
       "interactions": "Interactions API",
@@ -2178,8 +2186,8 @@
       "urlMode": "{{provider}} URL",
       "urlHint": "不同 URL 的使用規範一致,儲存時只會寫入目前分組協議對應位址。",
       "urlOptions": {
-         "aiCodeMirrorGlobal": "全球高保線路",
-         "aiCodeMirrorDomestic": "國內優化線路",
+        "aiCodeMirrorGlobal": "全球高保線路",
+        "aiCodeMirrorDomestic": "國內優化線路",
         "standard": "普通 URL",
         "direct": "專線直連 URL",
         "domestic": "中國大陸線路",
@@ -2188,8 +2196,8 @@
         "global": "全球"
       },
       "urlOptionDescriptions": {
-         "aiCodeMirrorGlobal": "適用於全球存取的高防護線路。",
-         "aiCodeMirrorDomestic": "針對中國大陸網路最佳化的線路。",
+        "aiCodeMirrorGlobal": "適用於全球存取的高防護線路。",
+        "aiCodeMirrorDomestic": "針對中國大陸網路最佳化的線路。",
         "domestic": "面向中國大陸使用者和部署在中國大陸網路環境中的業務，通常可獲得更低延遲。",
         "overseas": "面向海外部署、跨境存取或需要存取境外模型的業務。",
         "mainlandChinaRecommended": "推薦中國大陸使用者和部署在中國大陸網路環境中的業務使用。",
@@ -2490,5 +2498,41 @@
     "remove_pattern": "刪除第 {{row}} 列正規規則",
     "move_up": "上移第 {{row}} 列正規規則",
     "move_down": "下移第 {{row}} 列正規規則"
+  },
+  "cursor_quota": {
+    "timeline_note": "Cursor 僅顯示已回報的計費週期；後續週期將在回報後顯示。",
+    "percent_remaining": "剩餘 {{percent}}%",
+    "unavailable": "無法從 Cursor 取得訂閱用量。",
+    "scope": "僅顯示代理重啟後的本地用量。Token 數為估算值，不代表訂閱或帳單總額。",
+    "local_executions": "本地執行",
+    "local_success": "已完成請求",
+    "local_failed": "失敗請求",
+    "estimated_input_tokens": "估算輸入 Token",
+    "estimated_output_tokens": "估算輸出 Token",
+    "missing_auth_index": "缺少憑證索引",
+    "empty_title": "沒有 Cursor 帳戶",
+    "empty_desc": "請透過本地外掛登入 Cursor。",
+    "idle": "點擊載入 Cursor 額度",
+    "loading": "正在載入 Cursor 額度",
+    "load_failed": "無法載入配額",
+    "plan": "目前方案",
+    "unknown": "不可用",
+    "per_month": "{{price}}/月",
+    "usage_resets": "用量重置：{{date}}",
+    "cursor_models": "Cursor 模型",
+    "other_models": "其他模型",
+    "grok_bot": "Grok Bot · 每週",
+    "percent_used": "已使用 {{percent}}%",
+    "cursor_models_description": "包含 Cursor Grok 與 Composer。超出限額的用量將消耗其他模型額度或按需支出。",
+    "other_models_description": "超出限額的用量將消耗按需支出。",
+    "grok_bot_description": "每週重置。達到限額後暫停，除非啟用按需支出。",
+    "included_used": "已消耗包含用量：{{amount}}",
+    "included_remaining": "剩餘包含用量：{{amount}}",
+    "included_limit": "包含用量額度：{{amount}}",
+    "on_demand": "按需支出",
+    "enabled": "已啟用",
+    "disabled": "已停用",
+    "monthly_limit": "每月限額：{{amount}}",
+    "local_usage": "本地代理用量（估算）"
   }
 }

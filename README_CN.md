@@ -83,7 +83,7 @@
 
 ## 部署
 
-如需自行构建单文件界面，使用 **Bun 1.4.3**：
+如需自行构建单文件界面，使用 **Bun 1.4.4**：
 
 ```bash
 bun install --frozen-lockfile
@@ -112,7 +112,7 @@ bun run dev
 
 打开 `http://localhost:5173`，连接你的后端实例。
 
-**技术栈**：React 19 · TypeScript 6 · Vite 8 · Zustand · Axios · React Router 7 · Motion · CodeMirror 6 · SCSS Modules · i18next。
+**技术栈**：React 19 · TypeScript 7 · Vite 8 · Zustand · Axios · React Router 7 · Motion · CodeMirror 6 · SCSS Modules · i18next。
 
 | 命令 | 用途 |
 | --- | --- |

@@ -1,3 +1,4 @@
+import type { CursorQuotaState } from '@/features/quota/providers/cursor/types';
 /**
  * Quota cache that survives route switches.
  */
@@ -37,6 +38,7 @@ interface QuotaStoreState {
   metaQuota: Record<string, MetaQuotaState>;
   pluginQuota: Record<string, PluginQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
+  cursorQuota: Record<string, CursorQuotaState>;
   setCodexCreditOverage: (key: string, entry: CodexCreditOverageEntry | undefined) => void;
   setCodexCreditOverageOperation: (
     accountId: string,
@@ -51,6 +53,7 @@ interface QuotaStoreState {
   setMetaQuota: (updater: QuotaUpdater<Record<string, MetaQuotaState>>) => void;
   setPluginQuota: (updater: QuotaUpdater<Record<string, PluginQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
+  setCursorQuota: (updater: QuotaUpdater<Record<string, CursorQuotaState>>) => void;
   clearQuotaCache: (names?: string[]) => void;
 }
 
@@ -74,6 +77,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   metaQuota: {},
   pluginQuota: {},
   xaiQuota: {},
+  cursorQuota: {},
   setCodexCreditOverage: (key, entry) =>
     set((state) => {
       if (state.codexCreditOverage[key] === entry) return state;
@@ -144,6 +148,8 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
     })),
   setMetaQuota: (updater) =>
     set((state) => ({ metaQuota: resolveUpdater(updater, state.metaQuota) })),
+  setCursorQuota: (updater) =>
+    set((state) => ({ cursorQuota: resolveUpdater(updater, state.cursorQuota) })),
   setPluginQuota: (updater) =>
     set((state) => ({
       pluginQuota: resolveUpdater(updater, state.pluginQuota),
@@ -180,6 +186,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
           metaQuota: omitNames(state.metaQuota),
           pluginQuota: omitNames(state.pluginQuota),
           xaiQuota: omitNames(state.xaiQuota),
+          cursorQuota: omitNames(state.cursorQuota),
         };
       }
       return {
@@ -194,6 +201,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
         metaQuota: {},
         pluginQuota: {},
         xaiQuota: {},
+        cursorQuota: {},
       };
     }),
 }));

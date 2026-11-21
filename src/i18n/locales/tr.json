@@ -431,7 +431,8 @@
     "quota_refresh_single": "Kotayı Yenile",
     "quota_refresh_hint": "Yalnızca Bu Kimlik Bilgisinin Kotasını Yenile",
     "quota_refresh_success": "“{{name}}” için Kota Yenilendi",
-    "quota_refresh_failed": "“{{name}}” için Kota Yenilenemedi: {{message}}"
+    "quota_refresh_failed": "“{{name}}” için Kota Yenilenemedi: {{message}}",
+    "filter_cursor-local": "Cursor"
   },
   "antigravity_subscription": {
     "plan_unknown": "Bilinmiyor",
@@ -520,7 +521,14 @@
     "plan_max": "Max",
     "plan_max5": "Max 5x",
     "plan_max20": "Max 20x",
-    "plan_team": "Team"
+    "plan_team": "Team",
+    "plan_ultra": "Ultra",
+    "no_five_hour_limit": "No five-hour limit reported for this Ultra account.",
+    "remaining_percent": "{{percent}}% remaining",
+    "exhausted": "Limit reached: {{limits}}.",
+    "fable_exhausted_hint": "Fable has a separate weekly cap within your total allowance.",
+    "weekly_share": "Used {{used}}% of the total weekly allowance · cap {{allowance}}%.",
+    "usage_credits_disabled": "Usage credits are disabled."
   },
   "codex_quota": {
     "title": "Codex Kotası",
@@ -2096,7 +2104,7 @@
       "activeCount": "{{active}} / {{total}} Aktif"
     },
     "providerNames": {
-       "aiCodeMirror": "AIcodemirror",
+      "aiCodeMirror": "AIcodemirror",
       "meta": "Muse (Meta)",
       "gemini": "Gemini",
       "interactions": "Interactions API",
@@ -2157,8 +2165,8 @@
       "urlMode": "{{provider}} URL'si",
       "urlHint": "Tüm URL'ler Aynı API Kurallarını Kullanır. Kayıt Yalnızca Geçerli Gruplanmış Protokolün Uç Noktasını Yazar.",
       "urlOptions": {
-         "aiCodeMirrorGlobal": "Yüksek Korumalı Küresel Rota",
-         "aiCodeMirrorDomestic": "Çin Ana Karası için Optimize Edilmiş Rota",
+        "aiCodeMirrorGlobal": "Yüksek Korumalı Küresel Rota",
+        "aiCodeMirrorDomestic": "Çin Ana Karası için Optimize Edilmiş Rota",
         "standard": "Standart URL",
         "direct": "Doğrudan URL",
         "domestic": "Çin Ana Karası Rotası",
@@ -2167,8 +2175,8 @@
         "global": "Küresel"
       },
       "urlOptionDescriptions": {
-         "aiCodeMirrorGlobal": "Küresel erişim için yüksek korumalı bir rota.",
-         "aiCodeMirrorDomestic": "Çin ana karasındaki ağlar için optimize edilmiş bir rota.",
+        "aiCodeMirrorGlobal": "Küresel erişim için yüksek korumalı bir rota.",
+        "aiCodeMirrorDomestic": "Çin ana karasındaki ağlar için optimize edilmiş bir rota.",
         "domestic": "Çin Ana Karasındaki Kullanıcılar ve İş Yükleri için. Ana Kara Ağlarında Genellikle Daha Düşük Gecikme.",
         "overseas": "Yurt Dışı Dağıtımlar, Sınır Ötesi Erişim veya Yurt Dışı Modeller Gerektiren İş Yükleri için.",
         "mainlandChinaRecommended": "Çin Ana Karası Ağlarındaki Kullanıcılar ve İş Yükleri için Önerilir.",
@@ -2469,5 +2477,41 @@
     "remove_pattern": "{{row}}. regex satırını sil",
     "move_up": "{{row}}. regex satırını yukarı taşı",
     "move_down": "{{row}}. regex satırını aşağı taşı"
+  },
+  "cursor_quota": {
+    "timeline_note": "Cursor shows its reported billing window only; later cycles appear once reported.",
+    "percent_remaining": "{{percent}}% remaining",
+    "unavailable": "Subscription usage could not be retrieved from Cursor.",
+    "scope": "Local usage since proxy restart. Token counts are estimates; these are not subscription or billing totals.",
+    "local_executions": "Local executions",
+    "local_success": "Completed requests",
+    "local_failed": "Failed requests",
+    "estimated_input_tokens": "Estimated input tokens",
+    "estimated_output_tokens": "Estimated output tokens",
+    "missing_auth_index": "Missing credential index",
+    "empty_title": "No Cursor accounts",
+    "empty_desc": "Sign in to Cursor through the local plugin.",
+    "idle": "Click to load Cursor quota",
+    "loading": "Loading Cursor quota",
+    "load_failed": "Quota could not be loaded",
+    "plan": "Current plan",
+    "unknown": "Unavailable",
+    "per_month": "{{price}}/mo",
+    "usage_resets": "Usage resets: {{date}}",
+    "cursor_models": "Cursor Models",
+    "other_models": "Other Models",
+    "grok_bot": "Grok Bot · weekly",
+    "percent_used": "{{percent}}% used",
+    "cursor_models_description": "Includes Cursor Grok and Composer. Additional usage consumes Other Models quota or on-demand spend.",
+    "other_models_description": "Additional usage beyond limits consumes on-demand spend.",
+    "grok_bot_description": "Resets weekly. Grok Bot pauses at the limit unless on-demand spending is enabled.",
+    "included_used": "Included usage spent: {{amount}}",
+    "included_remaining": "Included usage remaining: {{amount}}",
+    "included_limit": "Included usage allowance: {{amount}}",
+    "on_demand": "On-demand spending",
+    "enabled": "Enabled",
+    "disabled": "Disabled",
+    "monthly_limit": "Monthly limit: {{amount}}",
+    "local_usage": "Local proxy usage (estimates)"
   }
 }

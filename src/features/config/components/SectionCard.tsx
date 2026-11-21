@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { InfoTip } from '@/components/ui/Tooltip';
-import { FIELDS_ROOT_CLASS } from './fields/FieldPrimitives';
+import { FIELDS_ROOT_CLASS } from './fields/fieldStyles';
 import styles from './SectionCard.module.scss';
 
 export type SectionCardProps = {

@@ -13,7 +13,7 @@ export interface PluginConfigDraft {
   touchedFields: Record<string, boolean>;
 }
 
-type Translate = (key: string, options?: Record<string, unknown>) => string;
+type Translate = (key: string) => string;
 
 export const normalizePluginConfigFieldType = (field: PluginConfigField): string =>
   field.type.trim().toLowerCase();

@@ -53,6 +53,8 @@ export function AuthFileQuotaSection(props: AuthFileQuotaSectionProps) {
     if (quotaType === 'meta') return state.metaQuota[cacheKey] as QuotaCardState | undefined;
     if (quotaType === 'plugin') return state.pluginQuota[cacheKey] as QuotaCardState | undefined;
     if (quotaType === 'xai') return state.xaiQuota[cacheKey] as QuotaCardState | undefined;
+    if (quotaType === 'cursor-local')
+      return state.cursorQuota[cacheKey] as QuotaCardState | undefined;
     return assertNever(quotaType);
   });
   const retainedClaudeUsage =

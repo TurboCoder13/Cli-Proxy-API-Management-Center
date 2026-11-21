@@ -35,11 +35,13 @@ export type QuotaProviderType =
   | 'kimi'
   | 'meta'
   | 'plugin'
-  | 'xai';
+  | 'xai'
+  | 'cursor-local';
 export type AuthFileQuotaFilter = string | null;
 export type OAuthConfigLoadError = 'loading' | 'unsupported' | 'load' | null;
 
 export const QUOTA_PROVIDER_TYPES = new Set<QuotaProviderType>([
+  'cursor-local',
   'meta',
   'antigravity',
   'claude',

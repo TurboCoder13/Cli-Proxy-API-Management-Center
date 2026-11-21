@@ -320,6 +320,9 @@ export function QuotaTimeline({
               defaultValue: 'manual reset expiry',
             })}
           </span>
+          {lanes.some((lane) => lane.provider === 'cursor-local') && (
+            <span className={styles.legendNote}>{t('cursor_quota.timeline_note')}</span>
+          )}
         </footer>
       )}
     </section>
@@ -380,7 +383,10 @@ function Lane({ lane, span, now, mode, cells, nowPercent, resolvedTheme }: LaneP
         <div className={styles.laneLimits}>
           {lane.limits.map((limit) => (
             <span key={limit.label} className={styles.laneLimit}>
-              {lane.provider === 'meta' ? t(limit.label) : limit.label} <b>{limit.remaining}%</b>
+              {lane.provider === 'meta' || lane.provider === 'cursor-local'
+                ? t(limit.label)
+                : limit.label}{' '}
+              <b>{limit.remaining}%</b>
             </span>
           ))}
         </div>
@@ -422,7 +428,7 @@ function Lane({ lane, span, now, mode, cells, nowPercent, resolvedTheme }: LaneP
                 key={window.startMs}
                 className={`${styles.window} ${styles[`window${capitalize(window.state)}`]}`}
                 style={{ left: `${window.leftPercent}%`, width: `${window.widthPercent}%` }}
-                title={`${lane.displayName}\n${formatDay(window.startMs)} ${formatTime(
+                title={`${lane.displayName}${lane.windowLabelKey ? `\n${t(lane.windowLabelKey)}` : ''}\n${formatDay(window.startMs)} ${formatTime(
                   window.startMs
                 )} → ${formatDay(window.endMs)} ${formatTime(window.endMs)}${
                   window.remaining !== null ? `\n${window.remaining}% remaining` : ''
@@ -438,6 +444,7 @@ function Lane({ lane, span, now, mode, cells, nowPercent, resolvedTheme }: LaneP
                 )}
                 {showLabel && (
                   <span className={styles.windowLabel}>
+                    {lane.windowLabelKey ? `${t(lane.windowLabelKey)} · ` : ''}
                     {window.remaining !== null ? `${window.remaining}% · ` : ''}
                     {endText}
                   </span>

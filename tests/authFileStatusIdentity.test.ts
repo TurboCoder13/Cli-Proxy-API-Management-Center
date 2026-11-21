@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'bun:test';
 import { readFileSync } from 'node:fs';
-import ts from 'typescript';
+import { transpileFunctionBody } from './helpers/transpile';
 import { getAuthFileRefreshKey } from '../src/features/authFiles/manualRefresh';
 
 const source = readFileSync('src/features/authFiles/hooks/useAuthFilesData.ts', 'utf8');
@@ -52,9 +52,7 @@ function harness() {
       source.indexOf(`  const ${name} = useCallback(`),
       source.indexOf(`  const ${next} = useCallback(`)
     );
-    const js = ts.transpileModule(`${block}\nreturn ${name};`, {
-      compilerOptions: { target: ts.ScriptTarget.ES2022 },
-    }).outputText;
+    const js = transpileFunctionBody(`${block}\nreturn ${name};`);
     return new Function(...Object.keys(env), js)(...Object.values(env));
   }
   return {
@@ -85,9 +83,7 @@ describe('auth file status identity', () => {
       apiSource.indexOf('  setStatus:'),
       apiSource.indexOf('  patchFields:')
     );
-    const js = ts.transpileModule(`return ({ ${expression} });`, {
-      compilerOptions: { target: ts.ScriptTarget.ES2022 },
-    }).outputText;
+    const js = transpileFunctionBody(`return ({ ${expression} });`);
     const calls: unknown[][] = [];
     const api = new Function('apiClient', js)({ patch: (...args: unknown[]) => calls.push(args) });
     api.setStatus('shared.json', true, 'b');

@@ -34,3 +34,26 @@ settings.local.json
 *.njsproj
 *.sln
 *.sw?
+
+# Local validation reports and screenshots
+.lintro/
+validation/
+
+# Private runtime state belongs outside this public source repository.
+.env
+.env.*
+!.env.example
+!.env.sample
+/config.yaml
+/config.yml
+/cliproxyapi.conf
+/auth.json
+/auth/
+/credentials/
+/management-key
+/client-key
+/backups/
+/private/
+*.private.json
+*.private.yaml
+*.private.yml

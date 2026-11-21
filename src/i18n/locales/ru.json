@@ -434,7 +434,8 @@
     "quota_refresh_single": "Обновить квоту",
     "quota_refresh_hint": "Обновить квоту только для этих учётных данных",
     "quota_refresh_success": "Квота для \"{{name}}\" обновлена",
-    "quota_refresh_failed": "Не удалось обновить квоту для \"{{name}}\": {{message}}"
+    "quota_refresh_failed": "Не удалось обновить квоту для \"{{name}}\": {{message}}",
+    "filter_cursor-local": "Cursor"
   },
   "antigravity_subscription": {
     "plan_unknown": "Неизвестно",
@@ -510,7 +511,14 @@
     "plan_max": "Max",
     "plan_max5": "Max 5x",
     "plan_max20": "Max 20x",
-    "plan_team": "Team"
+    "plan_team": "Team",
+    "plan_ultra": "Ultra",
+    "no_five_hour_limit": "Для этого аккаунта Ultra пятичасовой лимит не указан.",
+    "remaining_percent": "Осталось {{percent}}%",
+    "exhausted": "Лимит исчерпан: {{limits}}.",
+    "fable_exhausted_hint": "У Fable есть отдельный недельный лимит в пределах общей квоты.",
+    "weekly_share": "Использовано {{used}}% общей недельной квоты · предел {{allowance}}%.",
+    "usage_credits_disabled": "Оплата дополнительного использования отключена."
   },
   "codex_quota": {
     "title": "Квота Codex",
@@ -2100,7 +2108,7 @@
       "activeCount": "{{active}}/{{total}} активных"
     },
     "providerNames": {
-       "aiCodeMirror": "AIcodemirror",
+      "aiCodeMirror": "AIcodemirror",
       "meta": "Muse (Meta)",
       "gemini": "Gemini",
       "interactions": "Interactions API",
@@ -2161,8 +2169,8 @@
       "urlMode": "{{provider}} URL",
       "urlHint": "Все URL используют одинаковые правила API. При сохранении записывается только endpoint текущего группового протокола.",
       "urlOptions": {
-         "aiCodeMirrorGlobal": "Глобальный маршрут с усиленной защитой",
-         "aiCodeMirrorDomestic": "Оптимизированный маршрут для материкового Китая",
+        "aiCodeMirrorGlobal": "Глобальный маршрут с усиленной защитой",
+        "aiCodeMirrorDomestic": "Оптимизированный маршрут для материкового Китая",
         "standard": "Обычный URL",
         "direct": "Прямой URL",
         "domestic": "Маршрут для материкового Китая",
@@ -2171,8 +2179,8 @@
         "global": "Глобальный"
       },
       "urlOptionDescriptions": {
-         "aiCodeMirrorGlobal": "Маршрут с усиленной защитой для доступа по всему миру.",
-         "aiCodeMirrorDomestic": "Маршрут, оптимизированный для сетей материкового Китая.",
+        "aiCodeMirrorGlobal": "Маршрут с усиленной защитой для доступа по всему миру.",
+        "aiCodeMirrorDomestic": "Маршрут, оптимизированный для сетей материкового Китая.",
         "domestic": "Для пользователей и нагрузок в материковом Китае; обычно дает меньшую задержку в сетях материкового Китая.",
         "overseas": "Для зарубежных развертываний, трансграничного доступа или задач, которым нужны зарубежные модели.",
         "mainlandChinaRecommended": "Рекомендуется для пользователей и нагрузок в сетях материкового Китая.",
@@ -2473,5 +2481,41 @@
     "remove_pattern": "Удалить правило regex {{row}}",
     "move_up": "Переместить правило regex {{row}} вверх",
     "move_down": "Переместить правило regex {{row}} вниз"
+  },
+  "cursor_quota": {
+    "timeline_note": "Cursor показывает только заявленный расчётный период; следующие появятся после их получения.",
+    "percent_remaining": "Осталось {{percent}}%",
+    "unavailable": "Не удалось получить использование подписки от Cursor.",
+    "scope": "Локальное использование после перезапуска прокси. Число токенов приблизительное; это не данные подписки или счета.",
+    "local_executions": "Локальные выполнения",
+    "local_success": "Завершённые запросы",
+    "local_failed": "Неудачные запросы",
+    "estimated_input_tokens": "Оценка входных токенов",
+    "estimated_output_tokens": "Оценка выходных токенов",
+    "missing_auth_index": "Отсутствует индекс учётных данных",
+    "empty_title": "Нет аккаунтов Cursor",
+    "empty_desc": "Войдите в Cursor через локальный плагин.",
+    "idle": "Загрузить квоту Cursor",
+    "loading": "Загрузка квоты Cursor",
+    "load_failed": "Не удалось загрузить квоту",
+    "plan": "Текущий план",
+    "unknown": "Недоступно",
+    "per_month": "{{price}}/мес.",
+    "usage_resets": "Сброс использования: {{date}}",
+    "cursor_models": "Модели Cursor",
+    "other_models": "Другие модели",
+    "grok_bot": "Grok Bot · за неделю",
+    "percent_used": "Использовано {{percent}}%",
+    "cursor_models_description": "Включает Cursor Grok и Composer. При превышении расходуется квота других моделей или оплата по использованию.",
+    "other_models_description": "При превышении лимита применяется оплата по использованию.",
+    "grok_bot_description": "Сброс еженедельно. При достижении лимита бот приостанавливается, если оплата по использованию выключена.",
+    "included_used": "Использовано из включённой квоты: {{amount}}",
+    "included_remaining": "Остаток включённой квоты: {{amount}}",
+    "included_limit": "Включённая квота: {{amount}}",
+    "on_demand": "Оплата по использованию",
+    "enabled": "Включена",
+    "disabled": "Выключена",
+    "monthly_limit": "Месячный лимит: {{amount}}",
+    "local_usage": "Локальное использование прокси (оценки)"
   }
 }

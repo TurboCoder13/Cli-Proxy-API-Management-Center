@@ -60,6 +60,15 @@ describe('Claude Fable quota', () => {
 
     expect(windows).toEqual([
       {
+        id: 'seven-day',
+        label: 'claude_quota.seven_day',
+        labelKey: 'claude_quota.seven_day',
+        usedPercent: 9,
+        resetLabel: formatQuotaResetTime(legacyReset),
+        resetAtMs: Date.parse(legacyReset),
+        periodHours: 24 * 7,
+      },
+      {
         id: 'cloud-session-credits',
         label: 'claude_quota.cloud_session_credits',
         labelKey: 'claude_quota.cloud_session_credits',
