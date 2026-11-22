@@ -1607,6 +1607,10 @@
     "hide_details": "隐藏详情"
   },
   "quota_management": {
+    "usage_dashboard": "用量",
+    "usage_dashboard_hint": "打开 {{provider}} 用量面板（在新标签页中打开）",
+    "quota_guide": "配额指南",
+    "quota_guide_hint": "打开 {{provider}} 配额指南（在新标签页中打开）",
     "search_label": "搜索账号",
     "search_placeholder": "按文件名或邮箱搜索",
     "search_empty_title": "没有匹配的账号",

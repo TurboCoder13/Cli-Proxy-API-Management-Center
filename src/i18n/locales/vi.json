@@ -1570,6 +1570,10 @@
     "hide_details": "Ẩn chi tiết"
   },
   "quota_management": {
+    "usage_dashboard": "Mức sử dụng",
+    "usage_dashboard_hint": "Mở bảng mức sử dụng {{provider}} (trong thẻ mới)",
+    "quota_guide": "Hướng dẫn hạn mức",
+    "quota_guide_hint": "Mở hướng dẫn hạn mức {{provider}} (trong thẻ mới)",
     "title": "Quản lý Quota",
     "refresh_all_credentials": "Làm mới mọi credential",
     "sort_label": "Sắp xếp",

@@ -1614,6 +1614,10 @@
     "hide_details": "Ayrıntıları Gizle"
   },
   "quota_management": {
+    "usage_dashboard": "Kullanım",
+    "usage_dashboard_hint": "{{provider}} kullanım panelini aç (yeni sekmede açılır)",
+    "quota_guide": "Kota rehberi",
+    "quota_guide_hint": "{{provider}} kota rehberini aç (yeni sekmede açılır)",
     "search_label": "Hesap Ara",
     "search_placeholder": "Dosya Adına veya E-postaya Göre Ara",
     "search_empty_title": "Eşleşen Hesap Yok",

@@ -1614,6 +1614,10 @@
     "hide_details": "세부 정보 숨기기"
   },
   "quota_management": {
+    "usage_dashboard": "사용량",
+    "usage_dashboard_hint": "{{provider}} 사용량 대시보드 열기 (새 탭에서 열림)",
+    "quota_guide": "할당량 안내",
+    "quota_guide_hint": "{{provider}} 할당량 안내 열기 (새 탭에서 열림)",
     "search_label": "계정 검색",
     "search_placeholder": "파일명 또는 이메일로 검색",
     "search_empty_title": "일치하는 계정 없음",

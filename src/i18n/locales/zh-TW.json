@@ -1635,6 +1635,10 @@
     "hide_details": "隱藏詳情"
   },
   "quota_management": {
+    "usage_dashboard": "用量",
+    "usage_dashboard_hint": "開啟 {{provider}} 用量面板（在新分頁中開啟）",
+    "quota_guide": "配額指南",
+    "quota_guide_hint": "開啟 {{provider}} 配額指南（在新分頁中開啟）",
     "search_label": "搜尋帳號",
     "search_placeholder": "依檔案名稱或電子郵件搜尋",
     "search_empty_title": "沒有符合的帳號",
