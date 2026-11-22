@@ -1628,9 +1628,9 @@
   },
   "quota_management": {
     "usage_dashboard": "Использование",
-    "usage_dashboard_hint": "Открыть панель использования {{provider}} (в новой вкладке)",
+    "usage_dashboard_hint": "Использование {{provider}} — открыть панель (в новой вкладке)",
     "quota_guide": "О квотах",
-    "quota_guide_hint": "Открыть руководство по квотам {{provider}} (в новой вкладке)",
+    "quota_guide_hint": "О квотах {{provider}} — открыть руководство (в новой вкладке)",
     "search_label": "Поиск аккаунтов",
     "search_placeholder": "Поиск по имени файла или электронной почте",
     "search_empty_title": "Аккаунты не найдены",
