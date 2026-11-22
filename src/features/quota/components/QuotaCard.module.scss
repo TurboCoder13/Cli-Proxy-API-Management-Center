@@ -76,6 +76,7 @@
 }
 
 .fileName {
+  flex: 1;
   min-width: 0;
   font-family: $font-mono;
   font-size: 12.5px;
@@ -86,6 +87,11 @@
 }
 
 /* ---------- Compact layout: glance card and its details toggle ---------- */
+
+.usageLink {
+  flex-shrink: 0;
+  text-decoration: none;
+}
 
 .cardGlance {
   gap: 8px;

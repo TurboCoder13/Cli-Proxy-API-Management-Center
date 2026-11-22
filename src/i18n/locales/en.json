@@ -1614,6 +1614,10 @@
     "hide_details": "Hide details"
   },
   "quota_management": {
+    "usage_dashboard": "Usage",
+    "usage_dashboard_hint": "Open {{provider}} usage dashboard (opens in a new tab)",
+    "quota_guide": "Quota guide",
+    "quota_guide_hint": "Open {{provider}} quota guide (opens in a new tab)",
     "search_label": "Search accounts",
     "search_placeholder": "Search by filename or email",
     "search_empty_title": "No matching accounts",

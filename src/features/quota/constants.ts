@@ -15,6 +15,23 @@ export const QUOTA_TAB_ORDER: readonly QuotaProviderType[] = [
 
 export type QuotaTabId = 'all' | QuotaProviderType;
 
+/** Public account pages; never attach proxy credentials or account identifiers. */
+export const QUOTA_USAGE_LINKS: Record<
+  QuotaProviderType,
+  { url: string; isGuide?: boolean } | null
+> = {
+  claude: { url: 'https://claude.ai/new#settings/usage' },
+  codex: { url: 'https://chatgpt.com/settings/usage?tab=overview' },
+  'cursor-local': { url: 'https://cursor.com/dashboard?tab=usage' },
+  // Antigravity reports usage in its app Settings, without a public usage dashboard.
+  antigravity: { url: 'https://antigravity.google/docs/plans', isGuide: true },
+  kimi: { url: 'https://www.kimi.com/code/console' },
+  devin: { url: 'https://app.devin.ai/settings/usage' },
+  meta: { url: 'https://dev.meta.ai' },
+  xai: { url: 'https://grok.com/?_s=usage' },
+  plugin: null,
+};
+
 /** 页级分页固定 20/页，同时把「刷新全部」的上游并发限制在 20。 */
 export const QUOTA_PAGE_SIZE = 20;
 
