@@ -1,4 +1,5 @@
 import type { CursorQuotaState } from '@/features/quota/providers/cursor/types';
+import type { GeminiSnapshotQuotaState } from '@/features/quota/providers/geminiSnapshot/types';
 /**
  * Quota cache that survives route switches.
  */
@@ -39,6 +40,7 @@ interface QuotaStoreState {
   pluginQuota: Record<string, PluginQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
   cursorQuota: Record<string, CursorQuotaState>;
+  geminiSnapshotQuota: Record<string, GeminiSnapshotQuotaState>;
   setCodexCreditOverage: (key: string, entry: CodexCreditOverageEntry | undefined) => void;
   setCodexCreditOverageOperation: (
     accountId: string,
@@ -54,6 +56,7 @@ interface QuotaStoreState {
   setPluginQuota: (updater: QuotaUpdater<Record<string, PluginQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
   setCursorQuota: (updater: QuotaUpdater<Record<string, CursorQuotaState>>) => void;
+  setGeminiSnapshotQuota: (updater: QuotaUpdater<Record<string, GeminiSnapshotQuotaState>>) => void;
   clearQuotaCache: (names?: string[]) => void;
 }
 
@@ -78,6 +81,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
   pluginQuota: {},
   xaiQuota: {},
   cursorQuota: {},
+  geminiSnapshotQuota: {},
   setCodexCreditOverage: (key, entry) =>
     set((state) => {
       if (state.codexCreditOverage[key] === entry) return state;
@@ -150,6 +154,10 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
     set((state) => ({ metaQuota: resolveUpdater(updater, state.metaQuota) })),
   setCursorQuota: (updater) =>
     set((state) => ({ cursorQuota: resolveUpdater(updater, state.cursorQuota) })),
+  setGeminiSnapshotQuota: (updater) =>
+    set((state) => ({
+      geminiSnapshotQuota: resolveUpdater(updater, state.geminiSnapshotQuota),
+    })),
   setPluginQuota: (updater) =>
     set((state) => ({
       pluginQuota: resolveUpdater(updater, state.pluginQuota),
@@ -187,6 +195,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
           pluginQuota: omitNames(state.pluginQuota),
           xaiQuota: omitNames(state.xaiQuota),
           cursorQuota: omitNames(state.cursorQuota),
+          geminiSnapshotQuota: omitNames(state.geminiSnapshotQuota),
         };
       }
       return {
@@ -202,6 +211,7 @@ export const useQuotaStore = create<QuotaStoreState>((set) => ({
         pluginQuota: {},
         xaiQuota: {},
         cursorQuota: {},
+        geminiSnapshotQuota: {},
       };
     }),
 }));

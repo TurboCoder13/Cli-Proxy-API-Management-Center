@@ -432,7 +432,8 @@
     "policy_retry_invalid": "Nhập một số nguyên an toàn không âm, hoặc chọn Kế thừa.",
     "policy_aliases_invalid": "Nhập tên model và bí danh không để trống cho mỗi hàng mới hoặc đã chỉnh sửa.",
     "policy_rules_invalid": "Hoàn thành mỗi quy tắc đã chỉnh sửa với mã trạng thái dương, một hành động và ít nhất một điều kiện khớp không để trống.",
-    "filter_cursor-local": "Cursor"
+    "filter_cursor-local": "Cursor",
+    "filter_gemini-usage-snapshot": "Mức dùng Gemini (đã lưu)"
   },
   "antigravity_subscription": {
     "plan_unknown": "Không rõ",
@@ -2523,5 +2524,16 @@
     "disabled": "Disabled",
     "monthly_limit": "Monthly limit: {{amount}}",
     "local_usage": "Local proxy usage (estimates)"
+  },
+  "gemini_snapshot_quota": {
+    "empty_title": "Chưa có mức dùng Gemini đã lưu",
+    "empty_desc": "Chạy gemini-usage-refresh trên máy đã đăng nhập Gemini để lưu ảnh chụp mức dùng.",
+    "idle": "Nhấn để xem mức dùng Gemini đã lưu",
+    "loading": "Đang tải mức dùng đã lưu...",
+    "load_failed": "Không đọc được mức dùng đã lưu: {{message}}",
+    "captured_label": "Đã lưu",
+    "captured_unknown": "Không rõ",
+    "manual_note": "Được lưu thủ công từ CLI chính thức của Google. Chạy gemini-usage-refresh để có số liệu mới.",
+    "stale_note": "Một hạn mức đã đặt lại kể từ khi lưu. Chạy gemini-usage-refresh để có số liệu mới."
   }
 }

@@ -44,6 +44,7 @@ export const BUILT_IN_QUOTA_PROVIDERS: ReadonlySet<string> = new Set([
   'codex',
   'cursor-local',
   'devin',
+  'gemini-usage-snapshot',
   'kimi',
   'meta',
   'xai',

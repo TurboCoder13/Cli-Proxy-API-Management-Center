@@ -432,7 +432,8 @@
     "quota_refresh_hint": "Yalnızca Bu Kimlik Bilgisinin Kotasını Yenile",
     "quota_refresh_success": "“{{name}}” için Kota Yenilendi",
     "quota_refresh_failed": "“{{name}}” için Kota Yenilenemedi: {{message}}",
-    "filter_cursor-local": "Cursor"
+    "filter_cursor-local": "Cursor",
+    "filter_gemini-usage-snapshot": "Gemini kullanımı (kayıtlı)"
   },
   "antigravity_subscription": {
     "plan_unknown": "Bilinmiyor",
@@ -2517,5 +2518,16 @@
     "disabled": "Disabled",
     "monthly_limit": "Monthly limit: {{amount}}",
     "local_usage": "Local proxy usage (estimates)"
+  },
+  "gemini_snapshot_quota": {
+    "empty_title": "Kayıtlı Gemini kullanımı yok",
+    "empty_desc": "Kullanım anlık görüntüsünü kaydetmek için Gemini'de oturum açılmış makinede gemini-usage-refresh komutunu çalıştırın.",
+    "idle": "Kayıtlı Gemini kullanımını görmek için tıklayın",
+    "loading": "Kayıtlı kullanım yükleniyor...",
+    "load_failed": "Kayıtlı kullanım okunamadı: {{message}}",
+    "captured_label": "Kaydedildi",
+    "captured_unknown": "Bilinmiyor",
+    "manual_note": "Google'ın kendi CLI'sinden elle kaydedildi. Güncel değerler için gemini-usage-refresh komutunu çalıştırın.",
+    "stale_note": "Kayıttan sonra bir limit sıfırlandı. Güncel değerler için gemini-usage-refresh komutunu çalıştırın."
   }
 }

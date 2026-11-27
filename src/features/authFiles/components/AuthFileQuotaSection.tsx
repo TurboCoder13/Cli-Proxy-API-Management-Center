@@ -55,6 +55,8 @@ export function AuthFileQuotaSection(props: AuthFileQuotaSectionProps) {
     if (quotaType === 'xai') return state.xaiQuota[cacheKey] as QuotaCardState | undefined;
     if (quotaType === 'cursor-local')
       return state.cursorQuota[cacheKey] as QuotaCardState | undefined;
+    if (quotaType === 'gemini-usage-snapshot')
+      return state.geminiSnapshotQuota[cacheKey] as QuotaCardState | undefined;
     return assertNever(quotaType);
   });
   const retainedClaudeUsage =

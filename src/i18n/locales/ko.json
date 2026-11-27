@@ -432,7 +432,8 @@
     "quota_refresh_hint": "이 자격 증명의 할당량만 새로 고침합니다",
     "quota_refresh_success": "\"{{name}}\"의 할당량을 새로 고쳤습니다",
     "quota_refresh_failed": "\"{{name}}\"의 할당량 새로 고침 실패: {{message}}",
-    "filter_cursor-local": "Cursor"
+    "filter_cursor-local": "Cursor",
+    "filter_gemini-usage-snapshot": "Gemini 사용량 (저장됨)"
   },
   "antigravity_subscription": {
     "plan_unknown": "알 수 없음",
@@ -2517,5 +2518,16 @@
     "disabled": "Disabled",
     "monthly_limit": "Monthly limit: {{amount}}",
     "local_usage": "Local proxy usage (estimates)"
+  },
+  "gemini_snapshot_quota": {
+    "empty_title": "저장된 Gemini 사용량 없음",
+    "empty_desc": "Gemini에 로그인된 기기에서 gemini-usage-refresh를 실행해 사용량 스냅샷을 저장하세요.",
+    "idle": "클릭하여 저장된 Gemini 사용량 보기",
+    "loading": "저장된 사용량 불러오는 중...",
+    "load_failed": "저장된 사용량을 읽을 수 없습니다: {{message}}",
+    "captured_label": "저장 시각",
+    "captured_unknown": "알 수 없음",
+    "manual_note": "Google 공식 CLI에서 수동으로 저장했습니다. 최신 수치는 gemini-usage-refresh를 실행하세요.",
+    "stale_note": "저장 이후 한도가 초기화되었습니다. 최신 수치는 gemini-usage-refresh를 실행하세요."
   }
 }

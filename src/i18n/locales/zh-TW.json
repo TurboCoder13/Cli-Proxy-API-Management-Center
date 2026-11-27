@@ -430,7 +430,8 @@
     "quota_refresh_hint": "僅重新整理該驗證檔案的配額",
     "quota_refresh_success": "已重新整理「{{name}}」的配額",
     "quota_refresh_failed": "重新整理「{{name}}」的配額失敗：{{message}}",
-    "filter_cursor-local": "Cursor"
+    "filter_cursor-local": "Cursor",
+    "filter_gemini-usage-snapshot": "Gemini 用量（已儲存）"
   },
   "antigravity_subscription": {
     "plan_unknown": "未知",
@@ -2538,5 +2539,16 @@
     "disabled": "已停用",
     "monthly_limit": "每月限額：{{amount}}",
     "local_usage": "本地代理用量（估算）"
+  },
+  "gemini_snapshot_quota": {
+    "empty_title": "沒有已儲存的 Gemini 用量",
+    "empty_desc": "在已登入 Gemini 的機器上執行 gemini-usage-refresh 以儲存用量快照。",
+    "idle": "點擊查看已儲存的 Gemini 用量",
+    "loading": "正在載入已儲存的用量...",
+    "load_failed": "無法讀取已儲存的用量：{{message}}",
+    "captured_label": "儲存時間",
+    "captured_unknown": "未知",
+    "manual_note": "由 Google 官方 CLI 手動儲存。執行 gemini-usage-refresh 取得最新資料。",
+    "stale_note": "儲存後已有額度重置。執行 gemini-usage-refresh 取得最新資料。"
   }
 }

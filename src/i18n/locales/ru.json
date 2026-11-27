@@ -435,7 +435,8 @@
     "quota_refresh_hint": "Обновить квоту только для этих учётных данных",
     "quota_refresh_success": "Квота для \"{{name}}\" обновлена",
     "quota_refresh_failed": "Не удалось обновить квоту для \"{{name}}\": {{message}}",
-    "filter_cursor-local": "Cursor"
+    "filter_cursor-local": "Cursor",
+    "filter_gemini-usage-snapshot": "Использование Gemini (сохранено)"
   },
   "antigravity_subscription": {
     "plan_unknown": "Неизвестно",
@@ -2521,5 +2522,16 @@
     "disabled": "Выключена",
     "monthly_limit": "Месячный лимит: {{amount}}",
     "local_usage": "Локальное использование прокси (оценки)"
+  },
+  "gemini_snapshot_quota": {
+    "empty_title": "Нет сохранённых данных Gemini",
+    "empty_desc": "Запустите gemini-usage-refresh на машине, где выполнен вход в Gemini, чтобы сохранить снимок использования.",
+    "idle": "Нажмите, чтобы показать сохранённое использование Gemini",
+    "loading": "Загрузка сохранённых данных...",
+    "load_failed": "Не удалось прочитать сохранённые данные: {{message}}",
+    "captured_label": "Сохранено",
+    "captured_unknown": "Неизвестно",
+    "manual_note": "Сохранено вручную из официального CLI Google. Запустите gemini-usage-refresh для актуальных данных.",
+    "stale_note": "После сохранения лимит был сброшен. Запустите gemini-usage-refresh для актуальных данных."
   }
 }

@@ -147,6 +147,7 @@ export function QuotaPage() {
   const metaQuota = useQuotaStore((state) => state.metaQuota);
   const pluginQuota = useQuotaStore((state) => state.pluginQuota);
   const cursorQuota = useQuotaStore((state) => state.cursorQuota);
+  const geminiSnapshotQuota = useQuotaStore((state) => state.geminiSnapshotQuota);
   const xaiQuota = useQuotaStore((state) => state.xaiQuota);
 
   const quotaByType = useMemo<Record<QuotaProviderType, Record<string, QuotaCardState>>>(
@@ -161,6 +162,7 @@ export function QuotaPage() {
         plugin: pluginQuota,
         xai: xaiQuota,
         'cursor-local': cursorQuota,
+        'gemini-usage-snapshot': geminiSnapshotQuota,
       }) as unknown as Record<QuotaProviderType, Record<string, QuotaCardState>>,
     [
       antigravityQuota,
@@ -172,6 +174,7 @@ export function QuotaPage() {
       pluginQuota,
       xaiQuota,
       cursorQuota,
+      geminiSnapshotQuota,
     ]
   );
 

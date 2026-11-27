@@ -1,4 +1,5 @@
 import type { CursorQuotaState } from '@/features/quota/providers/cursor/types';
+import type { GeminiSnapshotQuotaState } from '@/features/quota/providers/geminiSnapshot/types';
 /**
  * 额度提供商数据层契约。
  *
@@ -30,7 +31,8 @@ export type QuotaProviderType =
   | 'meta'
   | 'plugin'
   | 'xai'
-  | 'cursor-local';
+  | 'cursor-local'
+  | 'gemini-usage-snapshot';
 
 /** useQuotaStore 的结构契约（storeSelector/storeSetter 依赖）。 */
 export interface QuotaStore {
@@ -43,6 +45,7 @@ export interface QuotaStore {
   pluginQuota: Record<string, PluginQuotaState>;
   xaiQuota: Record<string, XaiQuotaState>;
   cursorQuota: Record<string, CursorQuotaState>;
+  geminiSnapshotQuota: Record<string, GeminiSnapshotQuotaState>;
   setAntigravityQuota: (updater: QuotaUpdater<Record<string, AntigravityQuotaState>>) => void;
   setClaudeQuota: (updater: QuotaUpdater<Record<string, ClaudeQuotaState>>) => void;
   setCodexQuota: (updater: QuotaUpdater<Record<string, CodexQuotaState>>) => void;
@@ -52,6 +55,7 @@ export interface QuotaStore {
   setPluginQuota: (updater: QuotaUpdater<Record<string, PluginQuotaState>>) => void;
   setXaiQuota: (updater: QuotaUpdater<Record<string, XaiQuotaState>>) => void;
   setCursorQuota: (updater: QuotaUpdater<Record<string, CursorQuotaState>>) => void;
+  setGeminiSnapshotQuota: (updater: QuotaUpdater<Record<string, GeminiSnapshotQuotaState>>) => void;
   clearQuotaCache: () => void;
 }
 

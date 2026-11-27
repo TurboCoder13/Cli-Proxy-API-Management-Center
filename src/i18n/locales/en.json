@@ -432,7 +432,8 @@
     "quota_refresh_hint": "Refresh quota only for this credential",
     "quota_refresh_success": "Quota refreshed for \"{{name}}\"",
     "quota_refresh_failed": "Failed to refresh quota for \"{{name}}\": {{message}}",
-    "filter_cursor-local": "Cursor"
+    "filter_cursor-local": "Cursor",
+    "filter_gemini-usage-snapshot": "Gemini usage (saved)"
   },
   "antigravity_subscription": {
     "plan_unknown": "Unknown",
@@ -2517,5 +2518,16 @@
     "disabled": "Disabled",
     "monthly_limit": "Monthly limit: {{amount}}",
     "local_usage": "Local proxy usage (estimates)"
+  },
+  "gemini_snapshot_quota": {
+    "empty_title": "No saved Gemini usage",
+    "empty_desc": "Run gemini-usage-refresh on the machine signed in to Gemini to save a usage snapshot.",
+    "idle": "Click to show the saved Gemini usage",
+    "loading": "Loading saved usage...",
+    "load_failed": "Saved usage could not be read: {{message}}",
+    "captured_label": "Saved",
+    "captured_unknown": "Unknown",
+    "manual_note": "Saved by hand from Google's own CLI. Run gemini-usage-refresh for current numbers.",
+    "stale_note": "A limit has reset since this was saved. Run gemini-usage-refresh for current numbers."
   }
 }

@@ -14,6 +14,10 @@ export const TYPE_COLORS: Record<string, TypeColorSet> = {
     light: { bg: '#e3f2fd', text: '#1565c0' },
     dark: { bg: '#0d47a1', text: '#64b5f6' },
   },
+  'gemini-usage-snapshot': {
+    light: { bg: '#e3f2fd', text: '#1565c0' },
+    dark: { bg: '#0d47a1', text: '#64b5f6' },
+  },
   aistudio: {
     light: { bg: '#f0f2f5', text: '#2f343c' },
     dark: { bg: '#373c42', text: '#cfd3db' },

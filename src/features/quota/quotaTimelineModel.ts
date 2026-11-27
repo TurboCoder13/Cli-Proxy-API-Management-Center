@@ -620,7 +620,7 @@ export function buildTimelineLane(input: TimelineLaneInput): TimelineLane {
     };
   }
 
-  if (provider === 'antigravity' || provider === 'plugin') {
+  if (provider === 'antigravity' || provider === 'plugin' || provider === 'gemini-usage-snapshot') {
     // Antigravity inputs from buildTimelineLanes contain one independent group.
     // Plugins retain their existing account-level window selection.
     const buckets = ((quota as { groups?: { buckets?: AntigravityBucketLike[] }[] }).groups ?? [])
