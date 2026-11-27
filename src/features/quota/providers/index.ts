@@ -1,5 +1,7 @@
 import { CURSOR_CONFIG } from './cursor/data';
 import { CursorQuotaBody } from './cursor/CursorQuotaBody';
+import { GEMINI_SNAPSHOT_CONFIG } from './geminiSnapshot/data';
+import { GeminiSnapshotQuotaBody } from './geminiSnapshot/GeminiSnapshotQuotaBody';
 /**
  * 额度提供商适配器 = 数据层（data.ts，React-free）+ 渲染体（*QuotaBody.tsx）。
  *
@@ -64,6 +66,10 @@ export const QUOTA_ADAPTERS: Record<QuotaProviderType, QuotaAdapter> = {
   kimi: { ...KIMI_CONFIG, Body: KimiQuotaBody } as unknown as QuotaAdapter,
   meta: { ...META_CONFIG, Body: MetaQuotaBody } as unknown as QuotaAdapter,
   'cursor-local': { ...CURSOR_CONFIG, Body: CursorQuotaBody } as unknown as QuotaAdapter,
+  'gemini-usage-snapshot': {
+    ...GEMINI_SNAPSHOT_CONFIG,
+    Body: GeminiSnapshotQuotaBody,
+  } as unknown as QuotaAdapter,
   plugin: { ...PLUGIN_CONFIG, Body: PluginQuotaBody } as unknown as QuotaAdapter,
   xai: { ...XAI_CONFIG, Body: XaiQuotaBody } as unknown as QuotaAdapter,
 };

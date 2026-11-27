@@ -81,6 +81,7 @@ describe('buildTabCounts', () => {
       devin: 0,
       meta: 0,
       'cursor-local': 0,
+      'gemini-usage-snapshot': 0,
       plugin: 0,
     });
   });

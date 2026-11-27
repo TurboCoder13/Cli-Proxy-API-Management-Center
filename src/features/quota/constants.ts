@@ -10,6 +10,7 @@ export const QUOTA_TAB_ORDER: readonly QuotaProviderType[] = [
   'devin',
   'meta',
   'cursor-local',
+  'gemini-usage-snapshot',
   'plugin',
 ];
 
@@ -29,6 +30,8 @@ export const QUOTA_USAGE_LINKS: Record<
   devin: { url: 'https://app.devin.ai/settings/usage' },
   meta: { url: 'https://dev.meta.ai' },
   xai: { url: 'https://grok.com/?_s=usage' },
+  // Same reason as antigravity: Google shows consumer usage only inside its own clients.
+  'gemini-usage-snapshot': { url: 'https://antigravity.google/docs/plans', isGuide: true },
   plugin: null,
 };
 

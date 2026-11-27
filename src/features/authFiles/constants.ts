@@ -36,12 +36,14 @@ export type QuotaProviderType =
   | 'meta'
   | 'plugin'
   | 'xai'
-  | 'cursor-local';
+  | 'cursor-local'
+  | 'gemini-usage-snapshot';
 export type AuthFileQuotaFilter = string | null;
 export type OAuthConfigLoadError = 'loading' | 'unsupported' | 'load' | null;
 
 export const QUOTA_PROVIDER_TYPES = new Set<QuotaProviderType>([
   'cursor-local',
+  'gemini-usage-snapshot',
   'meta',
   'antigravity',
   'claude',
@@ -94,6 +96,7 @@ export const AUTH_FILE_ICONS: Record<string, AuthFileIconAsset> = {
   meta: iconMeta,
   devin: { light: iconDevin, dark: iconDevinDark },
   gemini: iconGemini,
+  'gemini-usage-snapshot': iconGemini,
   xai: { light: iconGrok, dark: iconGrokDark },
   iflow: iconIflow,
   kimi: { light: iconKimiDark, dark: iconKimiLight },
