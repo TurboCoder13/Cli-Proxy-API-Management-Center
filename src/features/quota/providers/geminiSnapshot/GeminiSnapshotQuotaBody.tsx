@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNow } from '@/hooks/useNow';
 import { PluginQuotaBody } from '../plugin/PluginQuotaBody';
 import type { QuotaBodyProps } from '../../types';
 import { countResetsSinceSnapshot } from './data';
@@ -14,8 +14,8 @@ export function GeminiSnapshotQuotaBody({
   classes,
 }: QuotaBodyProps<GeminiSnapshotQuotaState>) {
   const { t } = useTranslation();
-  // Read the clock once per mount; a refresh remounts nothing but re-renders with new data.
-  const [nowMs] = useState(() => Date.now());
+  // Shared minute clock: the stale note appears once a reset passes, without a reload.
+  const nowMs = useNow();
   const capturedAt =
     quota.capturedAtMs === null
       ? t('gemini_snapshot_quota.captured_unknown')
